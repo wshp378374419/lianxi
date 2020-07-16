@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "username": "wangshupeng",
+      "password": "123123",
+      "remember": false,
+      "id": 1
+    }
+  ],
+  "class": [],
+  "students": [],
+  "teacher": []
+}

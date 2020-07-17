@@ -1,37 +1,33 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import RouterComponent from "./router";
+import IndexRouter from "./router/IndexRouter";
 import "antd/dist/antd.css";
-import "./App.css";
+import "./app.css";
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    //登录验证
-    this.redirectLogin();
-    this.props.history.listen(() => {
-      this.redirectLogin();
-    });
+  constructor(props, context) {
+    super(props, context);
   }
-  redirectLogin = () => {
-    console.log(this.props.is_login, "is_login");
-    if (!this.props.is_login) {
+
+  componentDidMount() {
+    this.change_login();
+  }
+
+  change_login = () => {
+    //获取id
+    let is_login = localStorage.getItem("user_id");
+    console.log(is_login, "is_login");
+    if (!is_login) {
       this.props.history.replace("/login");
     }
   };
+
   render() {
     return (
       <div>
-        <RouterComponent></RouterComponent>
+        <IndexRouter></IndexRouter>
       </div>
     );
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    is_login: state.is_login,
-  };
-}
-
-export default withRouter(connect(mapStateToProps)(App));
+export default withRouter(App);

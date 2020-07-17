@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Form, Input, Button, Checkbox } from "antd";
-import { connect } from "react-redux";
-import { change_login } from "../store/actionCreator";
-import { login } from "../Api";
+import { Form, Input, Button, Checkbox, notification } from "antd";
+import { login } from "../../api";
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
@@ -11,32 +9,46 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
+const openNotification = () => {
+  notification.open({
+    message: "恭喜",
+    duration: 3,
+    description: "登录成功，3秒后跳转到首页",
+    onClick: () => {
+      console.log("Notification Clicked!");
+    },
+  });
 };
 
 class Login extends Component {
   onFinish = (values) => {
-    login({ ...values }).then((res) => {
-      if (res.data.length) {
-        this.props.onChangeLogin();
+    login(values).then(({ data }) => {
+      // console.log(res);
+      if (data.length > 0) {
+        openNotification();
+        setTimeout(() => this.props.history.replace("/"), 3000);
+        localStorage.setItem("user_id", data[0].id);
+        // 跳转到首页
+        // 存储登录状态
       } else {
-        alert("用户名或密码不正确");
+        alert("用户名或者密码错误");
       }
     });
-    console.log("Success:", values);
+  };
+
+  onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
   };
   render() {
-    console.log(this.props.is_login);
     return (
       <div className="login">
         <Form
           className="form"
           {...layout}
           name="basic"
-          initialValues={{ remember: false }}
+          initialValues={{ remember: true }}
           onFinish={this.onFinish}
-          onFinishFailed={onFinishFailed}
+          onFinishFailed={this.onFinishFailed}
         >
           <Form.Item
             label="Username"
@@ -60,7 +72,11 @@ class Login extends Component {
 
           <Form.Item {...tailLayout}>
             <Button type="primary" htmlType="submit">
-              登录
+              Submit
+            </Button>
+
+            <Button onClick={() => this.props.history.replace("/register")}>
+              注册
             </Button>
           </Form.Item>
         </Form>
@@ -69,14 +85,4 @@ class Login extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    is_login: state.is_login,
-  };
-}
-function mapDispatch(dispatch) {
-  return {
-    onChangeLogin: () => dispatch(change_login()),
-  };
-}
-export default connect(mapStateToProps, mapDispatch)(Login);
+export default Login;

@@ -1,0 +1,28 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\express+mysql"
+	},
+	{
+		"path": ".."
+	},
+	{
+		"path": "..\\..\\ts"
+	},
+	{
+		"path": "..\\..\\新建文件夹"
+	},
+	{
+		"path": "..\\..\\PHPdemo"
+	},
+	{
+		"path": "..\\..\\envelope2"
+	},
+	{
+		"path": "..\\..\\sy2001\\vue-demo1"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "envelope2"
+  }
+}

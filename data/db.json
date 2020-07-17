@@ -1,13 +1,94 @@
 {
   "users": [
     {
+      "id": 1,
+      "username": "zhangsan",
+      "password": "123456"
+    },
+    {
       "username": "wangshupeng",
       "password": "123123",
-      "remember": false,
-      "id": 1
+      "id": 2
+    },
+    {
+      "username": "wangshupeng1",
+      "password": "123123",
+      "id": 3
+    },
+    {
+      "username": "王树鹏",
+      "password": "123123",
+      "type": 1,
+      "id": 4
+    },
+    {
+      "username": "zhang123123",
+      "password": "123123123",
+      "type": 1,
+      "id": 5
+    },
+    {
+      "username": "wangshupengaaaa",
+      "password": "123123",
+      "type": 1,
+      "id": 6
+    },
+    {
+      "username": "lisi1",
+      "password": "123123",
+      "type": 1,
+      "id": 7
+    },
+    {
+      "username": "cvcvdv",
+      "password": "vdvdv",
+      "type": 1,
+      "id": 8
+    },
+    {
+      "username": "zhangsanddddd",
+      "password": "123123dddd",
+      "type": 1,
+      "id": 9
+    },
+    {
+      "username": {
+        "dispatchConfig": null,
+        "_targetInst": null,
+        "_dispatchListeners": null,
+        "_dispatchInstances": null,
+        "nativeEvent": null,
+        "type": null,
+        "target": null,
+        "eventPhase": null,
+        "bubbles": null,
+        "cancelable": null,
+        "defaultPrevented": null,
+        "isTrusted": null
+      },
+      "password": {
+        "dispatchConfig": null,
+        "_targetInst": null,
+        "_dispatchListeners": null,
+        "_dispatchInstances": null,
+        "nativeEvent": null,
+        "type": null,
+        "target": null,
+        "eventPhase": null,
+        "bubbles": null,
+        "cancelable": null,
+        "defaultPrevented": null,
+        "isTrusted": null
+      },
+      "type": 1,
+      "id": 10
+    },
+    {
+      "username": "王树鹏123",
+      "password": "123123",
+      "type": 1,
+      "id": 11
     }
   ],
-  "class": [],
-  "students": [],
-  "teacher": []
+  "company": []
 }

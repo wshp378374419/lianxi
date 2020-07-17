@@ -4,19 +4,77 @@
   list-style: none;
   text-decoration: none;
 }
+ul {
+  margin: 0;
+}
+.top {
+  background: #333;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.top .left {
+  cursor: pointer;
+}
+.top .right {
+  display: flex;
+}
+
+.top li {
+  margin-right: 15px;
+  color: #e1e1e1;
+  transition: 0.5;
+  cursor: pointer;
+}
+
+.top li:hover {
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+.content .left {
+  width: 256px;
+  background-color: #000;
+}
+.content .left_top {
+  height: 150px;
+  background: greenyellow;
+  text-align: center;
+  line-height: 30px;
+}
+
+.content .right {
+  flex: 1;
+  min-height: 500px;
+  background: #e1e1e1;
+}
 
 .login {
-  background: url("/imgs/bg0.jpg") red;
-  background-size: 100%;
+  /* background: #333; */
   height: 100vh;
   width: 100%;
+  position: relative;
+  background: url("/imgs/bg0.jpg");
+  background-size: 100%;
 }
-.form {
-  /* width: 50%; */
-  height: 50vh;
-  padding: 30px;
-  position: fixed;
-  left: 25vw;
-  top: 25vh;
-  background: #f1f1f1;
+.login .form {
+  width: 40%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  /* border: 4px solid #e1e1e1; */
+  position: absolute;
+  left: 30%;
+  top: 140px;
 }
